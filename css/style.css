@@ -21,7 +21,7 @@ a {
 }
 
 body {
-  font-family: 'Tahoma';
+  font-family: 'Roboto', sans-serif;
 }
 
 .content-section {
@@ -102,11 +102,11 @@ h6 {
   text-transform: uppercase;
   border: none;
   border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 section {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 
 .section-heading {
@@ -115,17 +115,19 @@ section {
 
 .masthead {
 	margin-bottom: 30px;
-	background-color: #a6d31d;
+	padding-bottom:5em;
+	background-color: #FFC010;
 	margin-top: 100px;
+	padding-top:5em;
 }
 
 header.masthead h1 {
 	font-size: 8rem;
-	color: rgba(0, 0, 0, 1);
+	color: white;
 }
 
 header.masthead p {
-  font-weight: 300;
+  font-weight: 800;
 }
 
 .sidebar {
@@ -135,7 +137,7 @@ header.masthead p {
 	z-index: 1; /* Stay on top */
 	top: 0;
 	left: 0;
-	background-color: rgb(0,110,46);
+	background-color: #39DB2C;
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
 	transition: 0.3s; /* 0.3 second transition effect to slide in the sidebar */
@@ -164,11 +166,16 @@ header.masthead p {
 	margin-left: 50px;
 }
 
+#logout {
+	position:absolute;
+	bottom:40px;
+}
+
 /* The button used to open the sidebar */
 .openbtn {
 	font-size: 50px;
 	cursor: pointer;
-	background-color: #a6d31d;
+	background-color: #39DB2C;
 	color: white;
 	padding: 10px 25px;
 	border: none;
@@ -179,14 +186,20 @@ header.masthead p {
 }
 
 a.nav-item {
-	font-size: 40px;
+	font-size: 45px;
 }
+
+.nav-item {
+	margin-top:1.5em;
+	margin-left:0.1em;
+}
+
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
 	transition: margin-left .3s; /* If you want a transition effect */
 	padding: 20px;
-	background: rgb(0,110,46); /* Old browsers */
+	background: #FFC010; /* Old browsers */
 	width: 100%;
 	position: fixed;
 	z-index: 1;
@@ -201,7 +214,8 @@ a.nav-item {
 
 
 .homepage-item {
-	background-color:rgb(31, 179, 18);
+	background-color: #00A029;
+	border-radius:10px;
 	width: 100%;
 	height: 262px;
 	padding: 0px;
@@ -229,7 +243,7 @@ a.nav-item {
 .button {
 	font-size: 15px;
 	background-color:rgb(31, 179, 18);
-	color:#000;
+	color:white;
 	border:none;
 }
 
@@ -239,13 +253,15 @@ a.nav-item {
 	cursor:pointer;
 	margin-top:30px;
 	margin-bottom:30px;
-	margin-left: 10px;
-	margin-right:10px;
+	margin-left: 15px;
+	margin-right:15px;
 	padding:5px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
 	font-size:30px;
+	border-radius: 20px
 }
+
 
 #empty-message {
 	font-size:30px;
@@ -258,7 +274,7 @@ a.nav-item {
 
 .item-button {
 	cursor:pointer;
-	background:rgb(255, 149, 5);
+	background: #FFC010;
 	width: 20%;
 	padding:20px;
 	margin:10px;
@@ -286,10 +302,19 @@ a.nav-item {
 	margin: 30px;
 }
 #kitchen-space-panel {
+	position:relative;
 	width:100%;
-	height:80%;
+	height:500px;
 	background: #FFF6E4;
 	border-radius:25px;
+}
+
+#empty-message {
+	position:absolute;
+	padding-left:5em;
+	padding-right:5em;
+	bottom: 30%;
+	color: #FFC010;
 }
 
 .kitchen-container {
