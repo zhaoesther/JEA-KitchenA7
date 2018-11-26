@@ -460,8 +460,8 @@ $(document).ready(function() {
 
 // * Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
-    document.getElementById("mainnav").style.width = "300px";
-    document.getElementById("main").style.marginLeft = "300px";
+    document.getElementById("mainnav").style.width = "430px";
+    document.getElementById("main").style.marginLeft = "430px";
     $("#opensidebar").hide();
     $("#closesidebar").show();
 }
