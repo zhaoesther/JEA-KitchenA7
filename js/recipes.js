@@ -73,17 +73,22 @@ $(document).ready(function() {
                      default: // No ingredient entered
                         alert('No ingredients entered!');
                 }
-                // Add the recipes into the tentative recipes to be shown
+                // Add the recipe names into the tentative recipes to be shown
                 for( var k = 0; k < theRecipe.length; k++ ) {
-                    recipesToList.add(theRecipe[k]);
-                    //console.log(theRecipe[k].name);
+                    recipesToList.add(theRecipe[k].name);
                 }
             }
             // Insert recipe card into recipes.html in #recipedeposit2
-            for( let recipe of recipesToList) {
-                var currHtml = template(recipe);
-                parentDiv.append(currHtml);
+            for( let recipeName of recipesToList) {
+                for( var j = 0; j < recipes_all.length; j++ ) {
+                    var currRecipe = recipes_all[j];
+                    if( currRecipe.name === recipeName ) {
+                        var currHtml = template(currRecipe);
+                        parentDiv.append(currHtml);
+                    }
+                }
             }
+            
         } else {
             $("#empty-message").show();
         }
@@ -108,6 +113,20 @@ function closeNav() {
 }
 
 // RECIPE STORAGE TO LOCALSTORAGE
+var recipes_all = [
+    {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
+    {'name': 'Cranberry Kale Salad', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
+    {'name': 'Chinese Style Kale', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
+    {'name': 'Kale Chips', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
+    {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'}, 
+    {'name': 'Broccoli Cheddar Soup', 'href':'./recipe_template.html?recipe=Broccoli%20Cheddar%20Soup', 'img':'./images/broccoli-cheddar.jpg'},
+    {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
+    {'name': 'Creamy Chicken and Spinach Skillet', 'href':'./recipe_template.html?recipe=Creamy%20Chicken%20and%20Spinach%20Skillet','img':'./images/chicken-spinach.jpg'},
+    {'name': 'Classic Deviled Eggs', 'href':'./recipe_template.html?recipe=Classic%20Deviled%20Eggs','img':'./images/devil-eggs.jpg'},
+    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
+    {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple%20and%20Healthy%20Poached%20Salmon','img':'./images/simple-salmon.jpg'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
+];
 
 // Each recipe array may contain recipes from other recipe arrays 
 // (For example. 'Chicken and Kale Soup' falls into both recipes_kale and recipes_chicken)
