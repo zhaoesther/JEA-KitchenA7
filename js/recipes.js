@@ -79,6 +79,11 @@ $(document).ready(function() {
                     recipesToList.add(theRecipe[i]);
                 }
             }
+            // Insert recipe card into recipes.html in #recipedeposit2
+            for( let recipe of recipesToList) {
+                var currHtml = template(recipe);
+                parentDiv.append(currHtml);
+            }
         }
 
 });
