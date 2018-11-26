@@ -115,7 +115,8 @@ section {
 
 .masthead {
 	margin-bottom: 30px;
-	background-color: lightgoldenrodyellow;
+	background-color: #a6d31d;
+	margin-top: 100px;
 }
 
 header.masthead h1 {
@@ -134,7 +135,7 @@ header.masthead p {
 	z-index: 1; /* Stay on top */
 	top: 0;
 	left: 0;
-	background-color: #a6d31d;
+	background-color: rgb(0,110,46);
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
 	transition: 0.3s; /* 0.3 second transition effect to slide in the sidebar */
@@ -185,12 +186,11 @@ a.nav-item {
 #main {
 	transition: margin-left .3s; /* If you want a transition effect */
 	padding: 20px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+1,008c3a+50,006e2e+100 */
 	background: rgb(0,110,46); /* Old browsers */
-	background: -moz-linear-gradient(top, #03752F 1%, rgba(0,156,65,1) 50%, #03752F 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #03752F 1%,rgb(0, 156, 65) 50%,#03752F 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #03752F 1%,rgba(0,156,65,1) 50%,#03752F 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -258,12 +258,13 @@ a.nav-item {
 
 .item-button {
 	cursor:pointer;
-	background:orange;
+	background:rgb(255, 149, 5);
 	width: 20%;
 	padding:20px;
 	margin:10px;
 	border: 0px;
 	box-shadow: none;
+	border-radius: 20px;
 }
 
 #kitchen-panel-list {
@@ -364,6 +365,7 @@ a.nav-item {
 	border-radius: 25px;
 	margin: 40px;
 	border-width: 4px;
+	max-height: auto;
 }
 
 /* FAVORITES */

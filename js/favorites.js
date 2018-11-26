@@ -61,8 +61,9 @@ function emptymessage() {
 
 $('#clear-favorites').click(function() {
     $('#templatedfavorites').empty();
-    $('#emptymessage').show();
+    $('#empty-message').show();
     localStorage.removeItem("favoritedrecipes");
+    console.log('Favorites Cleared!');
   });
 
 
