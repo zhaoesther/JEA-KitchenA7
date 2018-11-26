@@ -56,8 +56,11 @@ $(document).ready( function() {
              $('ul#kitchen-panel-list').append(li);
 
             $("button", li).text(ingredientName).addClass("item-button");
+            $("button", li).append('\n<i class=\"fa fa-2x fa-times sr-icons\">&nbsp</i>');
             $("#userInput").val("");
+           
             $("button", li).unwrap();
+           
             
             // pull data from prior local storage
             var localitemref = JSON.parse(localStorage.getItem("kitchen"));
@@ -69,7 +72,7 @@ $(document).ready( function() {
             }
             console.log(kitchenobject);
             
-            newingredientname = $(this).text();
+            newingredientname = $(this).text().trim();
             console.log($(this).text());
             var push={'inv': newingredientname};
             kitchenobject.push(push);
@@ -92,7 +95,7 @@ $(document).ready( function() {
         console.log(kitchenobjects);
         $('#empty-message').hide();
         for (i=0; i < kitchenobjects.length; i++) {
-            var li = ("<button class=\"item-button\">")+kitchenobjects[i].inv+("</button>");
+            var li = ("<button class=\"item-button\">")+kitchenobjects[i].inv+("\n<div class=\"fa fa-2x fa-times sr-icons\">&nbsp</div>")+("</button>");
             $("button", li).text($(this).text()).addClass("item-button");
             $('ul#kitchen-panel-list').append(li);
             console.log(li);
@@ -113,7 +116,7 @@ $(document).ready( function() {
             }
             for (i=0; i < kitchenobjects.length; i++) {
                 console.log(kitchenobjects[i]);
-                if (kitchenobjects[i].inv == $(this).text())
+                if (kitchenobjects[i].inv == $(this).text().trim())
                 {
                     kitchenobjects.splice(i,1);
                     break;

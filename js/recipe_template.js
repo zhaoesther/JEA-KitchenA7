@@ -214,7 +214,7 @@ var recipePageData = [
 		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
 		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
 		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
-	    'index': 5
+	    'index': 6
 	}
 
 ]
