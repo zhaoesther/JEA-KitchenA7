@@ -72,11 +72,11 @@ $(document).ready(function() {
                          break;
                      default: // No ingredient entered
                         alert('No ingredients entered!');
-                        break;
                 }
                 // Add the recipes into the tentative recipes to be shown
-                for( var i = 0; i < theRecipe.length; i++ ) {
-                    recipesToList.add(theRecipe[i]);
+                for( var k = 0; k < theRecipe.length; k++ ) {
+                    recipesToList.add(theRecipe[k]);
+                    //console.log(theRecipe[k].name);
                 }
             }
             // Insert recipe card into recipes.html in #recipedeposit2

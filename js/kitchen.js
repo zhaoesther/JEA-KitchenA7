@@ -59,7 +59,7 @@ $(document).ready( function() {
              $('ul#kitchen-panel-list').append(li);
 
             $("button", li).text(ingredientName).addClass("item-button");
-            $("button", li).append('\n<i id="icon" class=\"fa fa-2x fa-times sr-icons\" style="red">&nbsp</i>');
+            $("button", li).append('\n<i id="icon" class=\"fa fa-2x fa-times sr-icons\">&nbsp</i>');
             $("#userInput").val("");
            
             $("button", li).unwrap();
