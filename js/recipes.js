@@ -37,11 +37,68 @@ $(document).ready(function() {
     var template2 = Handlebars.compile(source2);
     var parent2 = $("#recipedeposit2");
     if (localitemref) {
-        for (var i = 0; i<recipes.length; i++) {
-            var curdata = recipes[i];
-            var curhtml = template2(curdata);
-            parent2.append(curhtml);
+        
+        for (var i = 0; i<localitemref.length; i++) {
+            var ingredients = localitemref[i];
+            if (ingredients == "kale") {
+                for (var i = kalestart; i<kaleend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "broccoli") {
+                for (var i = broccolistart; i<broccoliend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "chicken") {
+                for (var i = chickenstart; i<chickenend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "egg") {
+                for (var i = eggstart; i<eggend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "salmon") {
+                for (var i = salmonstart; i<salmonend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "spinach") {
+                for (var i = spinachstart; i<spinachend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == "tomato") {
+                for (var i = tomatostart; i<tomatoend; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+            if (ingredients == 'all') {
+                for (var i = 0; i<recipes.length; i++) {
+                    var curdata = recipes[i];
+                    var curhtml = template2(curdata);
+                    parent2.append(curhtml);
+                }
+            }
+                
         }
+
     }
     else
         $('#empty-message').show();
@@ -66,12 +123,42 @@ function closeNav() {
 }
 
 // RECIPE STORAGE TO LOCALSTORAGE
+
+// kale: 0-5
+kalestart = 0; kaleend=5;
+// broccoli: 6
+broccolistart=6; broccoliend=7;
+// chicken: 7
+chickenstart=7; chickenend=8;
+// egg: 8
+eggstart=8; eggend=9;
+// salmon: 9
+salmonstart=9; salmonend=10;
+// spinach: 10
+spinachstart=10; spinachend=11;
+// tomato: 11
+tomatostart=11; tomatoend=12;
+
 var recipes = [
-    {'name': 'Chicken and Kale Soup','index': '1', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
-    {'name': 'Cranberry Kale Salad','index': '2', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
-    {'name': 'Chinese Style Kale','index': '3', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
-    {'name': 'Kale Chips','index': '4', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
-    {'name': 'Kale Pesto','index': '5', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'}
+    // Kale
+    {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
+    {'name': 'Cranberry Kale Salad', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
+    {'name': 'Chinese Style Kale', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
+    {'name': 'Kale Chips', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
+    {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'},
+
+    // Broccoli
+
+    // Chicken
+
+    // Egg
+
+    // Salmon
+    {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple&and&Healthy&Poached&Salmon','img':'./images/simple-salmon.jpg'},
+    // Spinach
+
+    // Tomato
+
 ]
 
 // $('#ingredientslist').click(function() {
