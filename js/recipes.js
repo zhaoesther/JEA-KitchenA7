@@ -29,7 +29,6 @@ $(document).ready(function() {
             ingredientslist.append(stuff);
         }
     }
-    // console.log(ingredientslist);
 
     localStorage.setItem('allrecipes',JSON.stringify(recipes));
 
@@ -41,89 +40,96 @@ $(document).ready(function() {
     if (localitemref) {
         for (var j = 0; j<localitemref.length; j++) {
             var ingredients = localitemref[j];
-            console.log(ingredients);
             if (ingredients.inv == "Kale") {
                 console.log('Kale!');
-                for (var i = kalestart; i<kaleend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<kale.length; i++) {
+                    if (!listed.includes(kale[i])) {
+                        var curdata = recipes[kale[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
-                        listed.append(i);
+                        listed.push(kale[i]);
                     }
                     
                 }
             }
             if (ingredients.inv == "Broccoli") {
                 console.log('Broccoli!');
-                for (var i = broccolistart; i<broccoliend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<broccoli.length; i++) {
+                    if (!listed.includes(broccoli[i])) {
+                        var curdata = recipes[broccoli[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(broccoli[i]);
                     }
                 }
             }
             if (ingredients.inv == "Chicken") {
                 console.log('Chicken!');
-                for (var i = chickenstart; i<chickenend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<chicken.length; i++) {
+                    if (!listed.includes(chicken[i])) {
+                        var curdata = recipes[chicken[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(chicken[i]);
                     }
                 }
             }
             if (ingredients.inv == "Egg") {
                 console.log('Egg!');
-                for (var i = eggstart; i<eggend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<egg.length; i++) {
+                    if (!listed.includes(egg[i])) {
+                        var curdata = recipes[egg[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(egg[i]);
                     }
                 }
             }
             if (ingredients.inv == "Salmon") {
                 console.log('Salmon!');
-                for (var i = salmonstart; i<salmonend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<salmon.length; i++) {
+                    if (!listed.includes(salmon[i])) {
+                        var curdata = recipes[salmon[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(salmon[i]);
                     }
                 }
             }
             if (ingredients.inv == "Spinach") {
                 console.log('Spinach!');
-                for (var i = spinachstart; i<spinachend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<spinach.length; i++) {
+                    if (!listed.includes(spinach[i])) {
+                        var curdata = recipes[spinach[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(spinach[i]);
                     }
                 }
             }
             if (ingredients.inv == "Tomato") {
                 console.log('Tomato!');
-                for (var i = tomatostart; i<tomatoend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
+                for (var i = 0; i<tomato.length; i++) {
+                    if (!listed.includes(tomato[i])) {
+                        var curdata = recipes[tomato[i]];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(tomato[i]);
                     }
                 }
             }
             if (ingredients.inv == 'All') {
                 console.log('All!');
                 for (var i = 0; i<recipes.length; i++) {
-                    if (!listed.includes()) {
+                    if (!listed.includes(recipes[i])) {
                         var curdata = recipes[i];
                         var curhtml = template2(curdata);
                         parent2.append(curhtml);
+                        listed.push(i);
                     }
                 }
             } 
+            console.log(listed);
         }
     }
     else
@@ -150,20 +156,14 @@ function closeNav() {
 
 // RECIPE STORAGE TO LOCALSTORAGE
 
-// kale: 0-5
-kalestart = 0; kaleend=5;
-// broccoli: 6
-broccolistart=6; broccoliend=7;
-// chicken: 7
-chickenstart=7; chickenend=8;
-// egg: 8
-eggstart=8; eggend=9;
-// salmon: 9
-salmonstart=9; salmonend=10;
-// spinach: 10
-spinachstart=10; spinachend=11;
-// tomato: 11
-tomatostart=11; tomatoend=12;
+//list of indices of matching recipes
+kale=[0,1,2,3,4];
+broccoli=[5];
+chicken=[6];
+egg=[7];
+salmon=[8];
+spinach=[9];
+tomato=[7];     // NOTE THE EQUIVALENT INDEX WITH EGG
 
 var recipes = [
     // Kale
@@ -174,9 +174,9 @@ var recipes = [
     {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'},
 
     // Broccoli
-
+    {'name': 'Broccoli', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':' '},
     // Chicken
-
+    {'name': 'Chicken', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':' '},
     // Egg
     {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese&Tomato&and&Eggs&Stir-fry','img':'./images/tomato-egg.jpg'},
     // Salmon
@@ -184,7 +184,7 @@ var recipes = [
     // Spinach
 
     // Tomato
-    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese&Tomato&and&Eggs&Stir-fry','img':'./images/tomato-egg.jpg'},
+    // ONE OF TOMATO'S RECIPES IS IN EGG
 ]
 
 // $('#ingredientslist').click(function() {
