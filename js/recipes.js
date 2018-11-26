@@ -77,18 +77,10 @@ $(document).ready(function() {
                 // Add the recipes into the tentative recipes to be shown
                 for( var i = 0; i < theRecipe.length; i++ ) {
                     recipesToList.add(theRecipe[i]);
-                
                 }
-                // Insert relevant recipes into recipes.html
-                for (let recipe of recipesToList) {
-                    var currHtml = template(recipe);
-                    parentDiv.append(currHtml);
-                };
             }
-    }
+        }
 
-
-  
 });
 
 
@@ -109,21 +101,20 @@ function closeNav() {
 }
 
 // RECIPE STORAGE TO LOCALSTORAGE
+
 // Each recipe array may contain recipes from other recipe arrays 
 // (For example. 'Chicken and Kale Soup' falls into both recipes_kale and recipes_chicken)
 var recipes_kale = [
     // Kale
-
     {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
     {'name': 'Cranberry Kale Salad', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
     {'name': 'Chinese Style Kale', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
     {'name': 'Kale Chips', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
     {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'} 
-    ];
+];
 
 var recipes_broccoli = [
     // Broccoli
-
     {'name': 'Broccoli Cheddar Soup', 'href':'./recipe_template.html?recipe=Broccoli%20Cheddar%20Soup', 'img':'./images/broccoli-cheddar.jpg'},
     {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
 ];
@@ -160,6 +151,7 @@ var recipes_tomato = [
     {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'}
 
 ];
+
 
 // $('#ingredientslist').click(function() {
 //     window.location = "./kitchen.html"; // Go to kitchen page
