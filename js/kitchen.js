@@ -37,9 +37,6 @@ $(document).ready( function() {
     }
 
     $('li button').click(function() {
-        $('#empty-message').hide();
-        var li = $("<li><button></button></li>");
-        $('ul#kitchen-panel-list').append(li);
         var ingredientName = $(this).text();
         var listOfItems = JSON.parse(localStorage.getItem("kitchen"));
         var toAdd = true;
@@ -54,6 +51,9 @@ $(document).ready( function() {
         }
 
         if( toAdd === true ) {
+             $('#empty-message').hide();
+             var li = $("<li><button></button></li>");
+             $('ul#kitchen-panel-list').append(li);
 
             $("button", li).text(ingredientName).addClass("item-button");
             $("#userInput").val("");
