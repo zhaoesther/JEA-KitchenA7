@@ -45,6 +45,19 @@ $(document).ready(function() {
     else
         $('#empty-message').show();
 
+    var source2 = document.getElementById("recipetemplatecard").innerHTML;
+    var template2 = Handlebars.compile(source2);
+    var parent2 = $("#recipedeposit2");
+    if (localitemref) {
+        for (var i = 0; i<recipes.length; i++) {
+            var curdata = recipes[i];
+            var curhtml = template2(curdata);
+            parent2.append(curhtml);
+        }
+    }
+    else
+        $('#empty-message').show();
+
 });
 
 
@@ -73,6 +86,42 @@ var recipes = [
     {'name': 'Kale Pesto','index': '5', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'}
 ]
 
-$('#ingredientslist').click(function() {
-    window.location = "./kitchen.html"; // Go to kitchen page
-  });
+// $('#ingredientslist').click(function() {
+//     window.location = "./kitchen.html"; // Go to kitchen page
+// });
+// CHANGE TO BELOW FORMAT (REMOVE INGREDIENTS DIRECTLY)
+
+$('#ingredientslist').on("click",'.ingredient-item',function() {
+    console.log("click delete!");
+    var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+    var kitchenobjects = [];
+    if (localitemref != null) {
+        for (i=0; i < localitemref.length; i++) {
+            kitchenobjects.push(localitemref[i]);
+        }
+        for (i=0; i < kitchenobjects.length; i++) {
+            console.log(kitchenobjects[i]);
+            if (kitchenobjects[i].inv == $(this).text().trim())
+            {
+                kitchenobjects.splice(i,1);
+                break;
+            }
+        }
+    }
+    console.log($(this).text().trim());
+    
+    // remove button from kitchen
+    $(this).hide();
+
+    if (kitchenobjects.length <1) {
+        kitchenobjects = null;
+        $('#empty-message').show();
+        $('#recipelist').hide();
+        $('#recipelist2').hide();
+    }
+        
+    // push data to local storage
+    console.log(kitchenobjects);
+    localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
+
+})

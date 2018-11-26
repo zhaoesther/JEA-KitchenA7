@@ -5,12 +5,13 @@ if (!ready) {
 }
 function loading() {
 	console.log('loading...');
-	$('#loading-icon').show();
+	$('.preloader').show();
 }
 
 $(document).ready(function() {
-    $('#loading-icon').hide();
-	ready = true;
+    $('.preloader').hide();
+    ready = true;
+    console.log('loaded!');
     
     // Navbar Active Selection
     var url = window.location;

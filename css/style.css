@@ -10,6 +10,10 @@ hr {
   border-color: rgb(30, 32, 172);
 }
 
+p, ul, li {
+	font-size: 25px;
+}
+
 a {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -46,6 +50,42 @@ h6 {
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* LOADING... */
+#loading-overlay {
+	background-color: grey;
+	opacity: 0.4;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+#loader-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-80px, -80px);	/* set half of width & height */
+	z-index: 3;
+}
+#loader {
+    border: 22px solid #fff;
+    border-top: 22px solid #fa5a62;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+	animation: spin 2s linear infinite;
+	position: fixed;
+	align-items: center;
+  	justify-content: center;
+	z-index: inherit;
+	opacity: 1;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 .btn-link {
 	background-color:rgb(31, 179, 18);
@@ -119,17 +159,17 @@ header.masthead p {
 	position: absolute;
 	top: 0;
 	right: 25px;
-	font-size: 36px;
+	font-size: 50px;
 	margin-left: 50px;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-	font-size: 20px;
+	font-size: 50px;
 	cursor: pointer;
 	background-color: #a6d31d;
 	color: white;
-	padding: 10px 15px;
+	padding: 10px 25px;
 	border: none;
 }
 
@@ -137,10 +177,20 @@ header.masthead p {
 	background-color: #444;
 }
 
+a.nav-item {
+	font-size: 40px;
+}
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
 	transition: margin-left .3s; /* If you want a transition effect */
 	padding: 20px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+1,008c3a+50,006e2e+100 */
+	background: rgb(0,110,46); /* Old browsers */
+	background: -moz-linear-gradient(top, #03752F 1%, rgba(0,156,65,1) 50%, #03752F 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #03752F 1%,rgb(0, 156, 65) 50%,#03752F 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #03752F 1%,rgba(0,156,65,1) 50%,#03752F 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -301,6 +351,20 @@ header.masthead p {
 	border: 2px solid;
 	border-radius: 20px;
 }
+.recipe-ingredient:hover,
+.recipe-ingredient:focus {
+	background-color: red;
+}
+
+#recipedeposit2 {
+	margin: 50px;
+}
+
+.card {
+	border-radius: 25px;
+	margin: 40px;
+	border-width: 4px;
+}
 
 /* FAVORITES */
 
@@ -310,6 +374,11 @@ header.masthead p {
 	border: 2px solid;
 	border-radius: 20px;
 	margin: 20px;
+	border-color: rgb(156, 0, 0);
+}
+
+#templatedfavorites {
+	margin: 50px;
 }
 
 
