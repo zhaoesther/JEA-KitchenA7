@@ -156,7 +156,7 @@ var recipePageData = [
 		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
 		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 4
-    }
+    },
 
     {'title': 'Chinese Tomato and Eggs Stir-fry',
  	   'image':'./images/kale-chips.jpg',
@@ -210,7 +210,7 @@ $(document).ready(function() {
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
-/******** ACCESSING KITCHEN ITEMS ********/
+  /******** ACCESSING KITCHEN ITEMS ********/
   	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
 	var kitchenitems = [];
 	if (localitemref != null) {
@@ -219,39 +219,20 @@ $(document).ready(function() {
 		}
 	}
 	console.log(kitchenitems);
-/*** ****************************** ***/
+  /*** ****************************** ***/
 
-  var ingList = undefined;
-  var curData = undefined;
-  var recipenum = 0;
+  // Load the recipe page according to the recipe queried for
 
   for (var i = 0; i < recipePageData.length; i++) {
-    curData = recipePageData[i];
+    var curData = recipePageData[i];
     if (curData.title == recipeTitle) {
-		recipenum = i;
-	    ingList = curData.ingredients;
-	    for( var j = 0; j < ingList.length; j++ ) {
-	    	(curData.instock).push(null);
-		}
-		for ( var i = 0; i < ingList.length; i++ ) {
-			var currIng = ingList[i];
-			curData = recipePageData[recipenum];
-			for( var j = 0; j < kitchenitems.length; j++ ) {
-				if( (currIng.toLowerCase()).includes(kitchenitems[j].toLowerCase()) ) {
-					(curData.instock[i]) = "style=\"color:#bbb;\"";
-				}
-			}
-		}
 		var curHtml = template(curData);
 		parentDiv.append(curHtml);
-		break;
     }
   }
-	console.log(curData.instock);
-	console.log(curData);
 
 
-//   check if favorites button is supposed to be addin or addout
+    // Check if favorites button is supposed to be addin or addout
 	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
 	var recipeTitle = queryParams.get('recipe');
 	if (checkfav) {
