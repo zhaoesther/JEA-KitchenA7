@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JEA's Kitchen [App Name TBD]</title>
+
+<!-- Bootstrap Framework, icons, and animate -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="animate.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/recipes-style.css">
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<center>
+		<i id="loading-icon" class="fa fa-5x fa-hourglass-half sr-icons" style="margin:40%; border: 40%;"></i>
+	</center>
+	
+	<!-- Navbar -->
+	<div id="mainnav" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<hr style="border-color: #fff; max-width:80%;">
+		<a class="nav-item active" href="./home.html"><i class="fa fa-2x fa-home sr-icons"></i>Home</a>
+		<a class="nav-item" href="./kitchen.html"><i class="fa fa-2x fa-cutlery sr-icons"></i>My Kitchen</a>
+		<a class="nav-item" href="./recipes.html"><i class="fa fa-2x fa-files-o sr-icons"></i>Recipes Lookup</a>
+		<a class="nav-item" href="./favorites.html"><i class="fa fa-2x fa-bookmark sr-icons"></i>Favorites</a>
+		<a class="nav-item" href="./index.html"><i class="fa fa-2x fa-sign-out sr-icons"></i>Log Out</a>
+	</div>
+	<div id="main">
+		<button id="opensidebar" class="openbtn" onclick="openNav()">&#9776;</button>
+		<button id="closesidebar" class="openbtn" onclick="closeNav()" style="display:none">&times;</button>
+	</div>
+
+	<header class="recipe_heading masthead">
+		<div class="container mx-auto">
+			<div class="row" style="padding-top:50px">
+			<div class="col-lg-10 text-center mx-auto">
+				<h1 class="text-uppercase text-center">
+					<strong>Recipe Lookup</strong>
+					<hr style="max-width: 80%">
+				</h1>
+			</div>
+			</div>
+		</div>
+	</header>
+			
+	<div class="container">
+		<div class="row">
+			<h2>Ingredients from Kitchen:</h2>
+		</div>
+		<div class="row" id="ingredientslist" href="./kitchen.html" style="background: #FFF6E4;">
+			<!-- template goes here -->
+		</div>
+	</div>
+
+	<div id='empty-message' style="display:none">
+		<div class="text-center">
+			<p>No Recipes Found! Go to Fridge to add ingredients to find matching recipes!</p>
+		</div>
+	</div>
+
+	<section id="recipelist">
+		<div class="container" id="recipedeposit">
+			<!-- template goes here -->
+		</div>
+	</section>
+
+	<script id="recipetemplate" type="text/x-handlebars-template">
+	<div class="row" id="recipe{{index}}">
+		<div class="col-6 recipe-box">
+			<a href={{href}}>{{name}}<img src="{{img}}" alt="Soup image"></a>
+		</div>
+	</div>
+	</script>
+
+	<script id="ingredientstemplate" type="text/x-handlebars-template">
+	<div class="col-2 ingredient-item">
+		<p class="recipe-ingredient text-center" href="./kitchen.html" style="margin:5px; ">{{inv}}</p>
+	</div>
+	</script>
+
+</body>
+</html>
+
+<!-- Handlebars -->
+<script src="./js/handlebars-v4.0.11.js"></script>
+<!-- Custom JS -->
+<script src="./js/recipes.js"></script>

@@ -1,0 +1,315 @@
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: rgb(30, 32, 172);
+}
+
+a {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body {
+  font-family: 'Tahoma';
+}
+
+.content-section {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.content-section-heading h2 {
+  font-size: 3rem;
+}
+
+.content-section-heading h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-link {
+	background-color:rgb(31, 179, 18);
+	width: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.btn {
+  cursor: pointer;
+  font-weight: 700; 
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+.section-heading {
+  margin-top: 0;
+}
+
+.masthead {
+	margin-bottom: 30px;
+	background-color: lightgoldenrodyellow;
+}
+
+header.masthead h1 {
+	font-size: 8rem;
+	color: rgba(0, 0, 0, 1);
+}
+
+header.masthead p {
+  font-weight: 300;
+}
+
+.sidebar {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	background-color: #a6d31d;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.3s; /* 0.3 second transition effect to slide in the sidebar */
+}
+
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #f1f1f1;
+	display: block;
+	transition: 0.15s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #a6d31d;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+}
+
+.openbtn:hover {
+	background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+	transition: margin-left .3s; /* If you want a transition effect */
+	padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	.sidebar {padding-top: 15px;}
+	.sidebar a {font-size: 18px;}
+}
+
+
+.homepage-item {
+	background-color:rgb(31, 179, 18);
+	width: 100%;
+	height: 262px;
+	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	border: 0;
+ 	box-shadow: none;
+}
+
+.homepage-item:hover {
+	background:coral;
+}
+
+.homepage-item .homepage-item-content {
+	font-size: 60px;
+	color: #fff;
+	text-align: center;
+}
+
+.button-text {
+	text-decoration: none;
+	color:#000;
+}
+
+.button {
+	font-size: 15px;
+	background-color:rgb(31, 179, 18);
+	color:#000;
+	border:none;
+}
+
+
+/* KITCHEN SPECIFIC STYLING */
+.kitchen-button {
+	cursor:pointer;
+	margin-top:30px;
+	margin-bottom:30px;
+	margin-left: 10px;
+	margin-right:10px;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:30px;
+}
+
+#empty-message {
+	font-size:30px;
+	padding:20px;
+}
+
+#clear-kitchen {
+	background: #ccc;
+}
+
+.item-button {
+	cursor:pointer;
+	background:orange;
+	width: 20%;
+	padding:20px;
+	margin:10px;
+	border: 0px;
+	box-shadow: none;
+}
+
+#kitchen-panel-list {
+	list-style-type: none;
+}
+
+#find-recipes-button:hover {
+	background: coral;
+}
+.add-ingredient {
+	background: #ffcb3d;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:30px;
+}
+
+#searchform {
+	margin: 30px;
+}
+#kitchen-space-panel {
+	width:100%;
+	height:80%;
+	background: #FFF6E4;
+	border-radius:25px;
+}
+
+.kitchen-container {
+	width:80%;
+	margin:auto;
+	overflow:hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#userInput {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 30px;
+  padding: 20px 20px 20px 40px;
+  border: 2px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#ingredient-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#ingredient-list li button {
+  width:100%;
+  border: 1px solid #ffcb3d;
+  margin-top: -1px; 
+  background-color: #FFF6E4;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  display: block
+}
+
+#ingredient-list li button:hover{
+  background-color: #ffcb3d;
+}
+
+/* RECIPE */
+
+.recipe-ingredient {
+	cursor:pointer;
+	background:orange;
+	width: 100%;
+	padding-top:20px;
+	padding-bottom:20px;
+	margin:0px;
+	border: 0px;
+	box-shadow: none;
+}
+
+#ingredientslist {
+	border-color: #000;
+	border: 2px solid;
+	border-radius: 20px;
+}
+
+/* FAVORITES */
+
+#clear-favorites {
+	background-color: orangered;
+	border-color: orangered;
+	border: 2px solid;
+	border-radius: 20px;
+	margin: 20px;
+}
+
+
