@@ -40,6 +40,8 @@ $(document).ready( function() {
         var ingredientName = $(this).text();
         var listOfItems = JSON.parse(localStorage.getItem("kitchen"));
         var toAdd = true;
+        // Check if user already inputted an ingredient to prevent the same ingredient
+        // being added multiple times
         if (listOfItems != null) {
             for (var i = 0; i < listOfItems.length; i++) {
                 if(listOfItems[i].inv === ingredientName) {
@@ -50,6 +52,7 @@ $(document).ready( function() {
             }
         }
 
+        // Only add ingredient if it does not exist in the user's kitchen
         if( toAdd === true ) {
              $('#empty-message').hide();
              var li = $("<li><button></button></li>");
