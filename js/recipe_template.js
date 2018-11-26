@@ -317,8 +317,8 @@ const recipePageData = [
 	    'index': 9
 	},
 	{'title': 'Creamy Pan Seared Salmon with Tomatoes and Spinach',
- 	   'image':'./images/chicken-spinach.jpg',
- 	   'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon',
+ 	   'image':'./images/salmon-tomato-spinach.jpg',
+ 	   'href':'./recipe_template.html?recipe=Creamy%20Pan%20Seared%20Salmon%20with%20Tomatoes%20and%20Spinach',
 	   'ingredients': ['2 tablespoons garlic-flavored olive oil',
 	                   '4 (4-ounces each) skin-on salmon fillets',
 	                   'salt and fresh ground black pepper to taste',
@@ -414,17 +414,6 @@ $(document).ready(function() {
   var recipeTitle = queryParams.get('recipe');
   console.log('query for', recipeTitle);
 
-  /******** ACCESSING KITCHEN ITEMS ********/
-  	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-	var kitchenitems = [];
-	if (localitemref != null) {
-		for (i=0; i < localitemref.length; i++) {
-			kitchenitems.push(localitemref[i].inv);
-		}
-	}
-	console.log(kitchenitems);
-  /*** ****************************** ***/
-
   // Load the recipe page according to the recipe queried for
 
   for (var i = 0; i < recipePageData.length; i++) {
@@ -435,6 +424,17 @@ $(document).ready(function() {
     }
   }
 
+
+  /******** ACCESSING KITCHEN ITEMS ********/
+  	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+	var kitchenitems = [];
+	if (localitemref != null) {
+		for (i=0; i < localitemref.length; i++) {
+			kitchenitems.push(localitemref[i].inv);
+		}
+	}
+	console.log(kitchenitems);
+  /*** ****************************** ***/
 
     // Check if favorites button is supposed to be addin or addout
 	var checkfav = JSON.parse(localStorage.getItem('favoritedrecipes'));
@@ -451,7 +451,8 @@ $(document).ready(function() {
 	}
 
 	window.onclick = function(event) {
-        if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') && event.target !=document.getElementById('closesidebar')) {
+        if (event.target != document.getElementById('mainnav') && event.target !=document.getElementById('opensidebar') 
+        	&& event.target !=document.getElementById('closesidebar')) {
             closeNav();
         }
     }

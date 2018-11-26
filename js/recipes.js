@@ -31,8 +31,6 @@ $(document).ready(function() {
         }
     }
 
-    //localStorage.setItem('allrecipes',JSON.stringify(recipes));
-
     // Set up the template for recipes to be shown
     var source = $("#recipetemplatecard").html();
     var template = Handlebars.compile(source);
@@ -125,56 +123,57 @@ var recipes_all = [
     {'name': 'Classic Deviled Eggs', 'href':'./recipe_template.html?recipe=Classic%20Deviled%20Eggs','img':'./images/devil-eggs.jpg'},
     {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
     {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple%20and%20Healthy%20Poached%20Salmon','img':'./images/simple-salmon.jpg'},
-    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan%20Seared%20Salmon%20with%20Tomatoes%20and%20Spinach','img':'./images/salmon-tomato-spinach.jpg'},
 ];
+// Push to localStorage
+localStorage.setItem('allrecipes',JSON.stringify(recipes_all));
 
 // Each recipe array may contain recipes from other recipe arrays 
 // (For example. 'Chicken and Kale Soup' falls into both recipes_kale and recipes_chicken)
 var recipes_kale = [
     // Kale
-    {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
-    {'name': 'Cranberry Kale Salad', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
-    {'name': 'Chinese Style Kale', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
-    {'name': 'Kale Chips', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
-    {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'} 
+    {'name': 'Chicken and Kale Soup'},
+    {'name': 'Cranberry Kale Salad'},
+    {'name': 'Chinese Style Kale'},
+    {'name': 'Kale Chips'},
+    {'name': 'Kale Pesto'},
 ];
 
 var recipes_broccoli = [
     // Broccoli
-    {'name': 'Broccoli Cheddar Soup', 'href':'./recipe_template.html?recipe=Broccoli%20Cheddar%20Soup', 'img':'./images/broccoli-cheddar.jpg'},
-    {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
+    {'name': 'Broccoli Cheddar Soup'},
+    {'name': 'Mediterranean Broccoli & Cheese Omelet'}
 ];
 
 var recipes_chicken = [
     // Chicken
-    {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
-    {'name': 'Creamy Chicken and Spinach Skillet', 'href':'./recipe_template.html?recipe=Creamy%20Chicken%20and%20Spinach%20Skillet','img':'./images/chicken-spinach.jpg'},
-    
+    {'name': 'Chicken and Kale Soup'},
+    {'name': 'Creamy Chicken and Spinach Skillet'}
 ];
 
 var recipes_egg = [
     // Egg
-    {'name': 'Classic Deviled Eggs', 'href':'./recipe_template.html?recipe=Classic%20Deviled%20Eggs','img':'./images/devil-eggs.jpg'},
-    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
-    {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
+    {'name': 'Classic Deviled Eggs'},
+    {'name': 'Chinese Tomato and Eggs Stir-fry'},
+    {'name': 'Mediterranean Broccoli & Cheese Omelet'}
 ];
 
 var recipes_salmon = [
     // Salmon
-    {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple%20and%20Healthy%20Poached%20Salmon','img':'./images/simple-salmon.jpg'},
-    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
+    {'name': 'Simple and Healthy Poached Salmon'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach'}
 ];
 
 var recipes_spinach = [
     // Spinach
-    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
-    {'name': 'Creamy Chicken and Spinach Skillet', 'href':'./recipe_template.html?recipe=Creamy%20Chicken20and%20Spinach%20Skillet','img':'./images/chicken-spinach.jpg'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach'},
+    {'name': 'Creamy Chicken and Spinach Skillet'}
 ];
 
 var recipes_tomato = [
     // Tomato
-    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
-    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'}
+    {'name': 'Chinese Tomato and Eggs Stir-fry'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach'}
 
 ];
 
