@@ -182,7 +182,7 @@ var recipes = [
     // Salmon
     {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple&and&Healthy&Poached&Salmon','img':'./images/simple-salmon.jpg'},
     // Spinach
-
+    {'name': 'Spinach', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup','img':' '},
     // Tomato
     // ONE OF TOMATO'S RECIPES IS IN EGG
 ]
