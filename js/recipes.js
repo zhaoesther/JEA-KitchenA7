@@ -84,6 +84,8 @@ $(document).ready(function() {
                 var currHtml = template(recipe);
                 parentDiv.append(currHtml);
             }
+        } else {
+            $("#empty-message").show();
         }
 
 });

@@ -38,7 +38,6 @@ const recipePageData = [
 				  'Bring to a boil over high heat. Turn heat down to low and let simmer for 15 minutes. Taste and adjust seasoning as desired.'
 				 ],
 
-		'relatedRecipesIndex': [1,2,3],
 		'relatedTitle': ['Kale Pesto',
 		                 'Chinese Style Kale',
 		                 'Cranberry Kale Salad'],
@@ -67,7 +66,6 @@ const recipePageData = [
 				  'If you intend to have leftovers, transfer the amount of pasta you think you’ll be eating immediately to a serving bowl and mix in pesto with splashes of cooking water. Otherwise, you can mix the pasta and pesto together in your cooking pot, adding splashes of cooking water as necessary. Keep in mind that you have diluted the flavor a bit with the cooking water, so taste and add more lemon, salt or a drizzle of olive oil as necessary.'
 				 ],
 
-		'relatedRecipesIndex': [0,2,3],
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Chinese Style Kale',
 		                 'Cranberry Kale Salad'],
@@ -94,7 +92,6 @@ const recipePageData = [
 				  'Stir in the soy and oyster sauces and heat through to serve.'
 				 ],
 
-		'relatedRecipesIndex': [0,1,3],
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
@@ -127,7 +124,6 @@ const recipePageData = [
 	             'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.'
 	                  ],
 
-		'relatedRecipesIndex': [0,1,2],
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Chinese Style Kale'],
@@ -151,8 +147,6 @@ const recipePageData = [
 				  'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.',
 				  'Bake until the edges brown but are not burnt, 10 to 15 minutes.'
 				 ],
-
-		'relatedRecipesIndex': [0,1,3],
 		'relatedTitle': ['Chicken Kale Soup',
 		                 'Kale Pesto',
 		                 'Cranberry Kale Salad'],
