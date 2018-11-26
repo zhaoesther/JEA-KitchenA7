@@ -189,7 +189,33 @@ var recipePageData = [
 		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
 		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 5
-    }
+	},
+	
+	{'title': 'Simple and Healthy Poached Salmon',
+ 	   'image':'./images/simple-salmon.jpg',
+	   'ingredients': ['4 salmon filets, skin on',
+	                   '4 pinches of salt',
+	                   '4 pinches fresh ground black pepper'
+					  ],
+		'instock': [],
+		'steps': ['Lay each salmon fillet onto a piece of aluminum foil skin-side down.',
+				  'Add salt and freshly ground black pepper.',
+				  'Wrap each fillet tightly in the foil. Be sure to make an airtight seal. I recommend to fold the foil lengthwise and continue to fold along the seam until the fish is firmly wrapped. Fold/roll in each remaining end until the fish is fully enclosed.',
+				  'Place the wrapped salmon fillets into a large saucepan and cover completely with cold water. Bring to the boil over a medium heat. Reduce heat and simmer gently for 3 minutes.',
+				  'Remove the parcels from the saucepan. Carefully open each parcel and remove the skin from the fish.',
+				  'Serve the salmon topped with your choice of toppings such as salsa, pesto, mango salsa, chunky tomato. Serve with a salad or steamed veggies.'
+				 ],
+
+		'relatedRecipesIndex': [],
+		'relatedTitle': [],
+		    'relatedIMG1':'./images/Chicken-Kale-Detox-Soup.jpg',
+		    'relatedIMG2':'./images/kale-pesto.jpg',
+		    'relatedIMG3':'./images/Cranberry-Kale-Salad.jpg',
+		    'relatedREF1':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup',
+		    'relatedREF2':'./recipe_template.html?recipe=Kale%20Pesto',
+		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
+	    'index': 5
+	}
 
 ]
 
