@@ -47,11 +47,11 @@
 		</div>
 	</header>
 
-	<button id="clear-favorites" class="clear-kitchen" type="button">Clear Favorites</button>
+	<button id="clear-favorites" class="clear-kitchen text-white" type="button" style="font-size: 40px;">Clear Favorites</button>
 
-	<div id='empty-message' style="display:none">
+	<div id='empty-message' style="display:none; font-size: 40px;">
 		<div class="text-center">
-			<p>No Favorites Listed!</p>
+			<a>No Favorites Listed! Add recipes from </a><a href="./recipes.html">Recipe Lookup!</a>
 		</div>
 	</div>
 
@@ -69,6 +69,18 @@
 			</div>
 		</div>
 	</script>
+
+	<script id="favoritetemplatecard" type="text/x-handlebars-template">
+		<div class="card" id="favorite{{index}}">
+			<c href={{href}}>
+				<img class=card-img-top src="{{img}}" alt="Soup image">
+				<div class="card-body">
+					<h2 class="card-title">{{name}}</h2>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				</div>
+			</c>
+		</div>
+		</script>
 
 
 </body>

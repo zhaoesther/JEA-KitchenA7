@@ -24,6 +24,17 @@ $(document).ready(function() {
             var curhtml = template(curdata);
             parent.append(curhtml);
         }
+        
+        var source2 = document.getElementById("favoritetemplatecard").innerHTML;
+        var template2 = Handlebars.compile(source2);
+        var parent2 = $("#templatedfavorites");
+
+        for (var i = 0; i<fav.length; i++) {
+            var curdata = fav[i];
+            console.log(fav[i]);
+            var curhtml = template2(curdata);
+            parent2.append(curhtml);
+        }
     }
     else {
         emptymessage();

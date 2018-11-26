@@ -51,22 +51,34 @@
 			
 	<div class="container">
 		<div class="row">
-			<h2>Ingredients from Kitchen:</h2>
+			<a><strong>Ingredients from Kitchen:</strong></a>
 		</div>
 		<div class="row" id="ingredientslist" href="./kitchen.html" style="background: #FFF6E4;">
 			<!-- template goes here -->
 		</div>
 	</div>
 
+	<section style="padding-top: 50px; padding-bottom: 20px">
+		<div class="container" style="margin-left: 50px;">
+			<a style="text-decoration: underline;"><strong>Recipe Results:</strong></a>
+		</div>
+	</section>
+
 	<div id='empty-message' style="display:none">
 		<div class="text-center">
-			<p>No Recipes Found! Go to Fridge to add ingredients to find matching recipes!</p>
+			<a>No Recipes Found! Go to </a><a href="./kitchen.html">KITCHEN</a><a> to add ingredients to find matching recipes!</a>
 		</div>
 	</div>
 
 	<section id="recipelist">
 		<div class="container" id="recipedeposit">
 			<!-- template goes here -->
+		</div>
+	</section>
+
+	<section id="recipelist2" style="padding-top: 50px">
+		<div id="recipedeposit2">
+			<!-- card template goes here -->
 		</div>
 	</section>
 
@@ -78,9 +90,22 @@
 	</div>
 	</script>
 
+	<!-- CARD VERSION OF PREVIOUS TEMPLATE -->
+	<script id="recipetemplatecard" type="text/x-handlebars-template">
+		<div class="card" id="recipe{{index}}">
+			<c href={{href}}>
+				<img class=card-img-top src="{{img}}" alt="Soup image">
+				<div class="card-body">
+					<h2 class="card-title">{{name}}</h2>
+					<p class="card-text" style="font-size: 25px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				</div>
+			</c>
+		</div>
+	</script>
+
 	<script id="ingredientstemplate" type="text/x-handlebars-template">
 	<div class="col-2 ingredient-item">
-		<p class="recipe-ingredient text-center" href="./kitchen.html" style="margin:5px; ">{{inv}}</p>
+		<p class="recipe-ingredient text-center" style="margin:5px; ">{{inv}}</p>
 	</div>
 	</script>
 
