@@ -37,9 +37,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
 }
-#icon {
-	color:red;
-}
+
 h1,
 h2,
 h3,
@@ -249,6 +247,11 @@ a.nav-item {
 	border:none;
 }
 
+#pagename {
+	animation-duration: 0.3s;
+	font-size: 50px;
+}
+
 
 /* KITCHEN SPECIFIC STYLING */
 .kitchen-button {
@@ -274,6 +277,12 @@ a.nav-item {
 	background: #ccc;
 }
 
+#icon {
+	color:red;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
 .item-button {
 	cursor:pointer;
 	background: #FFC010;
@@ -283,6 +292,7 @@ a.nav-item {
 	border: 0px;
 	box-shadow: none;
 	border-radius: 20px;
+	text-shadow: 1px 1px 2px darkgrey;
 }
 
 #kitchen-panel-list {

@@ -12,6 +12,23 @@ $(document).ready(function() {
     $('#loading-icon').hide();
 	ready = true;
 
+    // Show name of page
+    var showpagename = function() {
+        if ($("#main").offset().top > 300) {
+            $("#pagename").show();
+            $("#pagename").removeClass("fadeOut");
+            $("#pagename").addClass("fadeIn");
+        } else {
+            $("#pagename").removeClass("fadeIn");
+            $("#pagename").addClass("fadeOut");
+        }
+    };
+    // Show now if page is not at top
+    showpagename();
+    // Show when page is scrolled
+    $(window).scroll(showpagename);
+    
+    
     var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
     if (fav) {
         
