@@ -32,18 +32,6 @@ $(document).ready(function() {
     console.log(ingredientslist);
 
     localStorage.setItem('allrecipes',JSON.stringify(recipes));
-    var source = document.getElementById("recipetemplate").innerHTML;
-    var template = Handlebars.compile(source);
-    var parent = $("#recipedeposit");
-    if (localitemref) {
-        for (var i = 0; i<recipes.length; i++) {
-            var curdata = recipes[i];
-            var curhtml = template(curdata);
-            parent.append(curhtml);
-        }
-    }
-    else
-        $('#empty-message').show();
 
     var source2 = document.getElementById("recipetemplatecard").innerHTML;
     var template2 = Handlebars.compile(source2);

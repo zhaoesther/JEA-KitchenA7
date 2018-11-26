@@ -70,36 +70,22 @@
 		</div>
 	</div>
 
-	<section id="recipelist">
-		<div class="container" id="recipedeposit">
-			<!-- template goes here -->
-		</div>
-	</section>
-
 	<section id="recipelist2" style="padding-top: 50px">
 		<div id="recipedeposit2">
 			<!-- card template goes here -->
 		</div>
 	</section>
 
-	<script id="recipetemplate" type="text/x-handlebars-template">
-	<div class="row" id="recipe{{index}}">
-		<div class="col-6 recipe-box">
-			<a href={{href}}>{{name}}<img src="{{img}}" alt="image"></a>
-		</div>
-	</div>
-	</script>
-
 	<!-- CARD VERSION OF PREVIOUS TEMPLATE -->
 	<script id="recipetemplatecard" type="text/x-handlebars-template">
 		<div class="card" id="recipe{{index}}">
-			<c href={{href}}>
+			<a href={{href}}>
 				<img class=card-img-top src="{{img}}" alt="Soup image">
 				<div class="card-body">
 					<h2 class="card-title">{{name}}</h2>
 					<p class="card-text" style="font-size: 25px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 				</div>
-			</c>
+			</a>
 		</div>
 	</script>
 

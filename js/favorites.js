@@ -14,16 +14,6 @@ $(document).ready(function() {
 
     var fav = JSON.parse(localStorage.getItem('favoritedrecipes'));
     if (fav) {
-        var source = document.getElementById("favoritetemplate").innerHTML;
-        var template = Handlebars.compile(source);
-        var parent = $("#templatedfavorites");
-    
-        for (var i = 0; i<fav.length; i++) {
-            var curdata = fav[i];
-            console.log(fav[i]);
-            var curhtml = template(curdata);
-            parent.append(curhtml);
-        }
         
         var source2 = document.getElementById("favoritetemplatecard").innerHTML;
         var template2 = Handlebars.compile(source2);
