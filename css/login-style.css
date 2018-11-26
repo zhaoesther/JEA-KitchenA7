@@ -1,5 +1,5 @@
 * {
-  font-family: 'Tahoma';
+  font-family: 'Roboto', sans-serif;
   color:#a6d31d;
 
 }
@@ -9,15 +9,19 @@ body {
 }
 
 #login-box {
-
+  position:relative;
+  top:300px;
+  border-radius: 30px;
   background: white;
-  width:50%;
+  width:75%;
   margin:auto;
   padding: 50px;
+  font-size: 45px;
   overflow:hidden;
 }
 
 input {
+    border-radius: 30px;
     outline: none;
     display: block;
     width: 100%;
@@ -26,7 +30,7 @@ input {
     border: 1px solid #ccc;
     color: #ccc;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 35px;
     font-weight: 400;
 }
 
@@ -35,14 +39,16 @@ input {
 }
 
 #submit-button {
+  border-radius: 30px;
   cursor: pointer;
   width: 100%;
   font-size: 15px;
   background-color:#a6d31d;
   color:#fff;
-  padding: 8px;
+  padding: 25px;
   border: 0;
   box-shadow: none;
+  font-size: 35px;
 }
 
 #invalid-message{
