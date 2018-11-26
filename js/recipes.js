@@ -1,4 +1,5 @@
 /// Calls this while document not ready
+
 var ready = false;
 if (!ready) {
 	loading();
@@ -18,117 +19,76 @@ $(document).ready(function() {
         }
     }
 
-    var ingredsource = document.getElementById("ingredientstemplate").innerHTML;
+    var ingredsource = $("#ingredientstemplate").html();
     var ingredtemplate = Handlebars.compile(ingredsource);
     var ingredientslist = $("#ingredientslist");
-    var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-    if (localitemref) {
-        for (var i = 0; i<localitemref.length; i++) {
-            var ingredients = localitemref[i];
+    var listOfItems = JSON.parse(localStorage.getItem("kitchen"));
+    if ( listOfItems != null ) {
+        for (var i = 0; i < listOfItems.length; i++) {
+            var ingredients = listOfItems[i];
             var stuff = ingredtemplate(ingredients);
             ingredientslist.append(stuff);
         }
     }
-    // console.log(ingredientslist);
 
-    localStorage.setItem('allrecipes',JSON.stringify(recipes));
+    //localStorage.setItem('allrecipes',JSON.stringify(recipes));
 
-    var source2 = document.getElementById("recipetemplatecard").innerHTML;
-    var template2 = Handlebars.compile(source2);
-    var parent2 = $("#recipedeposit2");
+    // Set up the template for recipes to be shown
+    var source = $("#recipetemplatecard").html();
+    var template = Handlebars.compile(source);
+    var parentDiv = $("#recipedeposit2");
 
-    var listed = [];
-    if (localitemref) {
-        for (var j = 0; j<localitemref.length; j++) {
-            var ingredients = localitemref[j];
-            console.log(ingredients);
-            if (ingredients.inv == "Kale") {
-                console.log('Kale!');
-                for (var i = kalestart; i<kaleend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                        listed.append(i);
-                    }
-                    
+    // Check if user's kitchen has any ingredients inputted
+    if( listOfItems != null ) {
+            // Use a set data structure to hold the filtered recipes to be shown to the user
+            var recipesToList = new Set();
+            // Loop through the user's ingredients
+            for( var i = 0; i < listOfItems.length; i++ ) {
+                var theRecipe = null;
+                var currItem = listOfItems[i];
+                // Depending on which ingredient it is, look into the corresponding recipe array
+                // Since we are using a set, duplicate recipes will be ignored
+                switch(currItem.inv) {
+                     case 'Broccoli':
+                         theRecipe = recipes_broccoli;
+                         break;
+                     case 'Chicken':
+                         theRecipe = recipes_chicken;
+                         break;
+                     case 'Egg':
+                         theRecipe = recipes_egg;
+                         break;
+                     case 'Kale':
+                         theRecipe = recipes_kale;
+                         break;
+                     case 'Salmon':
+                         theRecipe = recipes_salmon;
+                         break;
+                     case 'Spinach':
+                         theRecipe = recipes_spinach;
+                         break;
+                     case 'Tomato':
+                         theRecipe = recipes_tomato;
+                         break;
+                     default: // No ingredient entered
+                        alert('No ingredients entered!');
+                        break;
                 }
+                // Add the recipes into the tentative recipes to be shown
+                for( var i = 0; i < theRecipe.length; i++ ) {
+                    recipesToList.add(theRecipe[i]);
+                
+                }
+                // Insert relevant recipes into recipes.html
+                for (let recipe of recipesToList) {
+                    var currHtml = template(recipe);
+                    parentDiv.append(currHtml);
+                };
             }
-            if (ingredients.inv == "Broccoli") {
-                console.log('Broccoli!');
-                for (var i = broccolistart; i<broccoliend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == "Chicken") {
-                console.log('Chicken!');
-                for (var i = chickenstart; i<chickenend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == "Egg") {
-                console.log('Egg!');
-                for (var i = eggstart; i<eggend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == "Salmon") {
-                console.log('Salmon!');
-                for (var i = salmonstart; i<salmonend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == "Spinach") {
-                console.log('Spinach!');
-                for (var i = spinachstart; i<spinachend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == "Tomato") {
-                console.log('Tomato!');
-                for (var i = tomatostart; i<tomatoend; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            }
-            if (ingredients.inv == 'All') {
-                console.log('All!');
-                for (var i = 0; i<recipes.length; i++) {
-                    if (!listed.includes()) {
-                        var curdata = recipes[i];
-                        var curhtml = template2(curdata);
-                        parent2.append(curhtml);
-                    }
-                }
-            } 
-        }
     }
-    else
-        $('#empty-message').show();
 
+
+  
 });
 
 
@@ -149,43 +109,57 @@ function closeNav() {
 }
 
 // RECIPE STORAGE TO LOCALSTORAGE
-
-// kale: 0-5
-kalestart = 0; kaleend=5;
-// broccoli: 6
-broccolistart=6; broccoliend=7;
-// chicken: 7
-chickenstart=7; chickenend=8;
-// egg: 8
-eggstart=8; eggend=9;
-// salmon: 9
-salmonstart=9; salmonend=10;
-// spinach: 10
-spinachstart=10; spinachend=11;
-// tomato: 11
-tomatostart=11; tomatoend=12;
-
-var recipes = [
+// Each recipe array may contain recipes from other recipe arrays 
+// (For example. 'Chicken and Kale Soup' falls into both recipes_kale and recipes_chicken)
+var recipes_kale = [
     // Kale
+
     {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
     {'name': 'Cranberry Kale Salad', 'href':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad','img':'./images/Cranberry-Kale-Salad.jpg'},
     {'name': 'Chinese Style Kale', 'href':'./recipe_template.html?recipe=Chinese%20Style%20Kale','img':'./images/Chinese-Style-Kale.jpg'},
     {'name': 'Kale Chips', 'href':'./recipe_template.html?recipe=Kale%20Chips','img':'./images/kale-chips.jpg'},
-    {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'},
+    {'name': 'Kale Pesto', 'href':'./recipe_template.html?recipe=Kale%20Pesto','img':'./images/kale-pesto.jpg'} 
+    ];
 
+var recipes_broccoli = [
     // Broccoli
 
+    {'name': 'Broccoli Cheddar Soup', 'href':'./recipe_template.html?recipe=Broccoli%20Cheddar%20Soup', 'img':'./images/broccoli-cheddar.jpg'},
+    {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
+];
+
+var recipes_chicken = [
     // Chicken
+    {'name': 'Chicken and Kale Soup', 'href':'./recipe_template.html?recipe=Chicken%20and%20Kale%20Soup', 'img':'./images/Chicken-Kale-Detox-Soup.jpg'},
+    {'name': 'Creamy Chicken and Spinach Skillet', 'href':'./recipe_template.html?recipe=Creamy%20Chicken%20and%20Spinach%20Skillet','img':'./images/chicken-spinach.jpg'},
+    
+];
 
+var recipes_egg = [
     // Egg
-    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese&Tomato&and&Eggs&Stir-fry','img':'./images/tomato-egg.jpg'},
-    // Salmon
-    {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple&and&Healthy&Poached&Salmon','img':'./images/simple-salmon.jpg'},
-    // Spinach
+    {'name': 'Classic Deviled Eggs', 'href':'./recipe_template.html?recipe=Classic%20Deviled%20Eggs','img':'./images/devil-eggs.jpg'},
+    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
+    {'name': 'Mediterranean Broccoli & Cheese Omelet', 'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet', 'img':'./images/broccoli-cheese-omelete.jpg'},
+];
 
+var recipes_salmon = [
+    // Salmon
+    {'name': 'Simple and Healthy Poached Salmon', 'href':'./recipe_template.html?recipe=Simple%20and%20Healthy%20Poached%20Salmon','img':'./images/simple-salmon.jpg'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
+];
+
+var recipes_spinach = [
+    // Spinach
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'},
+    {'name': 'Creamy Chicken and Spinach Skillet', 'href':'./recipe_template.html?recipe=Creamy%20Chicken20and%20Spinach%20Skillet','img':'./images/chicken-spinach.jpg'},
+];
+
+var recipes_tomato = [
     // Tomato
-    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese&Tomato&and&Eggs&Stir-fry','img':'./images/tomato-egg.jpg'},
-]
+    {'name': 'Chinese Tomato and Eggs Stir-fry', 'href':'./recipe_template.html?recipe=Chinese%20Tomato%20and%20Eggs%20Stir-fry','img':'./images/tomato-egg.jpg'},
+    {'name': 'Creamy Pan Seared Salmon with Tomatoes and Spinach', 'href':'./recipe_template.html?recipe=Creamy%20Pan20Seared%20Salmon','img':'./images/salmon-tomato-spinach.jpg'}
+
+];
 
 // $('#ingredientslist').click(function() {
 //     window.location = "./kitchen.html"; // Go to kitchen page
