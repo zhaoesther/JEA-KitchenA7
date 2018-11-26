@@ -40,7 +40,6 @@
 			<div class="col-lg-10 text-center mx-auto">
 				<h1 class="text-uppercase text-center">
 					<strong>Favorites</strong>
-					<hr style="max-width: 80%">
 				</h1>
 			</div>
 			</div>
@@ -72,13 +71,13 @@
 
 	<script id="favoritetemplatecard" type="text/x-handlebars-template">
 		<div class="card" id="favorite{{index}}">
-			<c href={{href}}>
+			<a href={{href}} style="color: inherit;">
 				<img class=card-img-top src="{{img}}" alt="Soup image">
 				<div class="card-body">
 					<h2 class="card-title">{{name}}</h2>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 				</div>
-			</c>
+			</a>
 		</div>
 		</script>
 
