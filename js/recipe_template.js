@@ -579,7 +579,7 @@ function closeNav() {
 		var newfav = [];
         if (favoritestuff) {
             for (i=0; i < favoritestuff.length; i++) {
-				if (favoritestuff[i].name !='Chicken and Kale Soup') {
+				if (favoritestuff[i].name != queryParams.get('recipe')) {
 					newfav.push(favoritestuff[i]);
 					console.log(favoritestuff[i]);
 				}

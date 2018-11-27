@@ -199,40 +199,75 @@ var recipes_tomato = [
 // });
 // CHANGE TO BELOW FORMAT (REMOVE INGREDIENTS DIRECTLY)
 
-$('#ingredientslist').on("click",'.ingredient-item',function() {
-    console.log('go to kitchen...');
-    window.location.href="./kitchen.html"
+$('#ingredientslist').on("click",'.recipe-ingredient',function() {
+    // console.log('go to kitchen...');
+    // window.location.href="./kitchen.html"
 
-    // console.log("click delete!");
-    // var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-    // var kitchenobjects = [];
-    // if (localitemref != null) {
-    //     for (i=0; i < localitemref.length; i++) {
-    //         kitchenobjects.push(localitemref[i]);
-    //     }
-    //     for (i=0; i < kitchenobjects.length; i++) {
-    //         console.log(kitchenobjects[i]);
-    //         if (kitchenobjects[i].inv == $(this).text().trim())
-    //         {
-    //             kitchenobjects.splice(i,1);
-    //             break;
-    //         }
-    //     }
-    // }
-    // console.log($(this).text().trim());
+    console.log("click delete!");
+    var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+    var kitchenobjects = [];
+    if (localitemref != null) {
+        for (i=0; i < localitemref.length; i++) {
+            kitchenobjects.push(localitemref[i]);
+        }
+        for (i=0; i < kitchenobjects.length; i++) {
+            console.log(kitchenobjects[i]);
+            if (kitchenobjects[i].inv == $(this).text().trim())
+            {
+                kitchenobjects.splice(i,1);
+                break;
+            }
+        }
+    }
+    console.log($(this).text().trim());
     
-    // // remove button from kitchen
-    // $(this).hide();
+    // remove button from kitchen
+    $(this).hide();
 
-    // if (kitchenobjects.length <1) {
-    //     kitchenobjects = null;
-    //     $('#empty-message').show();
-    //     $('#recipelist').hide();
-    //     $('#recipelist2').hide();
-    // }
+    if (kitchenobjects.length <1) {
+        kitchenobjects = null;
+        $('#empty-message').show();
+        $('#recipelist').hide();
+        $('#recipelist2').hide();
+    }
         
-    // // push data to local storage
-    // console.log(kitchenobjects);
-    // localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
+    // push data to local storage
+    console.log(kitchenobjects);
+    localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
 
-})
+});
+
+$('#anyBtn').click(function() {
+    anyBtnPush();
+});
+$('#onlyBtn').click(function() {
+    onlyBtnPush();
+});
+$('#allBtn').click(function() {
+    allBtnPush();
+});
+
+function anyBtnPush() {
+    $('.toggler').siblings().removeClass('active');
+    $('#anyBtn').addClass('active');
+    setting = 0;
+    localStorage.setItem('setting',JSON.stringify(setting));
+    // window.location.reload();
+    console.log('any');
+}
+function onlyBtnPush() {
+    $('.toggler').siblings().removeClass('active');
+    $('#onlyBtn').addClass('active');
+    setting = 1;
+    localStorage.setItem('setting',JSON.stringify(setting));
+    // window.location.reload();
+    console.log('only');
+}
+function allBtnPush() {
+    $('.toggler').siblings().removeClass('active');
+    $('#allBtn').addClass('active');
+    setting = 2;
+    localStorage.setItem('setting',JSON.stringify(setting));
+    // window.location.reload();
+    console.log('all');
+}

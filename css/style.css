@@ -274,7 +274,7 @@ a.nav-item {
 }
 
 #clear-kitchen {
-	background: #ccc;
+	background: coral;
 }
 
 #icon {
@@ -302,12 +302,22 @@ a.nav-item {
 #find-recipes-button:hover {
 	background: coral;
 }
+#find-recipes-button {
+	padding: 50px;
+	margin: 50px;
+	width: 80%;
+}
+#kitchen-button-row {
+	vertical-align: center;
+	width: 80%;
+	margin:50px;
+}
 .add-ingredient {
 	background: #ffcb3d;
 	padding:5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	font-size:30px;
+	padding-left: 50px;
+	padding-right: 50px;
+	font-size:100px;
 }
 
 #searchform {
@@ -419,6 +429,7 @@ a.nav-item {
 }
 
 #ingredients-in-common {
+
 	border-radius: 25px;
 	background: #FFC010;
 }
