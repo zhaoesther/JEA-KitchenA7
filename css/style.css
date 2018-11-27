@@ -320,6 +320,14 @@ a.nav-item {
 	font-size:100px;
 }
 
+.favorite {
+	background: #ffcb3d;
+	padding:5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size:30px;
+}
+
 #searchform {
 	margin: 30px;
 }
