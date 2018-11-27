@@ -98,7 +98,7 @@ $(document).ready( function() {
         console.log(kitchenobjects);
         $('#empty-message').hide();
         for (i=0; i < kitchenobjects.length; i++) {
-            var li = ("<button class=\"item-button\">")+kitchenobjects[i].inv+("\n<div class=\"fa fa-2x fa-times sr-icons\">&nbsp</div>")+("</button>");
+            var li = ("<button class=\"item-button\">")+kitchenobjects[i].inv+("\n<div id=\"icon\" class=\"fa fa-2x fa-times sr-icons\">&nbsp</div>")+("</button>");
             $("button", li).text($(this).text()).addClass("item-button");
             $('ul#kitchen-panel-list').append(li);
             console.log(li);

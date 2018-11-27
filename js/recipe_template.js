@@ -271,7 +271,7 @@ const recipePageData = [
 		    'relatedREF3':'./recipe_template.html?recipe=Cranberry%20Kale%20Salad',
 	    'index': 7
 	},
-		{'title': 'Mediterranean Broccoli & Cheese Omelet',
+		{'title': 'Mediterranean Broccoli and Cheese Omelet',
  	   'image':'./images/broccoli-cheese-omelete.jpg',
  	   'href':'./recipe_template.html?recipe=Mediterranean%20Broccoli%20and%20Cheese%20Omelet',
 	   'ingredients': ['2-1/2 cups fresh broccoli florets',
@@ -427,7 +427,28 @@ $(document).ready(function() {
 	ready = true;
   console.log('recipe loaded');
 
+	// Show name of page at #main header bar
+	var showpagename = function() {
+		if ($("#main").offset().top > 100) {
+			$("#pagename").show();
+			$("#pagename").removeClass("fadeOut");
+			$("#pagename").addClass("fadeIn");
+		} else {
+			$("#pagename").removeClass("fadeIn");
+			$("#pagename").addClass("fadeOut");
+		}
+	};
+	// Show now if page is not at top
+	showpagename();
+	// Show when page is scrolled
+	$(window).scroll(showpagename);
+
+
   // compile the template
+  var pagenamesource = $("#mainName").html();
+  var pagenametemplate = Handlebars.compile(pagenamesource);
+  var pagenamedeposit = $("#pageNameDeposit");
+
   var source   = $("#recipe-template").html();
   var template = Handlebars.compile(source);
   var parentDiv = $("#templatedRecipe");
@@ -460,6 +481,16 @@ $(document).ready(function() {
     	}
 		var curHtml = template(curData);
 		parentDiv.append(curHtml);
+		var curinfo = pagenametemplate(curData)
+		pagenamedeposit.append(curinfo);
+		// console.log(curData.title.length);
+		if (curData.title.length > 39) {
+			var fontadjust = (Math.fround((window.innerWidth/9.8-curData.title.length)/15)).toString();
+			fontadjust = fontadjust.concat('vw');
+			// console.log(fontadjust);
+			$("#pagename").css('font-size',fontadjust);
+			console.log('Main Name font size adjusted');
+		}
     }
   }
 

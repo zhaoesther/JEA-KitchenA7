@@ -19,6 +19,22 @@ $(document).ready(function() {
         }
     }
 
+    // Show name of page
+    var showpagename = function() {
+        if ($("#main").offset().top > 300) {
+            $("#pagename").show();
+            $("#pagename").removeClass("fadeOut");
+            $("#pagename").addClass("fadeIn");
+        } else {
+            $("#pagename").removeClass("fadeIn");
+            $("#pagename").addClass("fadeOut");
+        }
+    };
+    // Show now if page is not at top
+    showpagename();
+    // Show when page is scrolled
+    $(window).scroll(showpagename);
+
     var ingredsource = $("#ingredientstemplate").html();
     var ingredtemplate = Handlebars.compile(ingredsource);
     var ingredientslist = $("#ingredientslist");
@@ -184,36 +200,39 @@ var recipes_tomato = [
 // CHANGE TO BELOW FORMAT (REMOVE INGREDIENTS DIRECTLY)
 
 $('#ingredientslist').on("click",'.ingredient-item',function() {
-    console.log("click delete!");
-    var localitemref = JSON.parse(localStorage.getItem("kitchen"));
-    var kitchenobjects = [];
-    if (localitemref != null) {
-        for (i=0; i < localitemref.length; i++) {
-            kitchenobjects.push(localitemref[i]);
-        }
-        for (i=0; i < kitchenobjects.length; i++) {
-            console.log(kitchenobjects[i]);
-            if (kitchenobjects[i].inv == $(this).text().trim())
-            {
-                kitchenobjects.splice(i,1);
-                break;
-            }
-        }
-    }
-    console.log($(this).text().trim());
-    
-    // remove button from kitchen
-    $(this).hide();
+    console.log('go to kitchen...');
+    window.location.href="./kitchen.html"
 
-    if (kitchenobjects.length <1) {
-        kitchenobjects = null;
-        $('#empty-message').show();
-        $('#recipelist').hide();
-        $('#recipelist2').hide();
-    }
+    // console.log("click delete!");
+    // var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+    // var kitchenobjects = [];
+    // if (localitemref != null) {
+    //     for (i=0; i < localitemref.length; i++) {
+    //         kitchenobjects.push(localitemref[i]);
+    //     }
+    //     for (i=0; i < kitchenobjects.length; i++) {
+    //         console.log(kitchenobjects[i]);
+    //         if (kitchenobjects[i].inv == $(this).text().trim())
+    //         {
+    //             kitchenobjects.splice(i,1);
+    //             break;
+    //         }
+    //     }
+    // }
+    // console.log($(this).text().trim());
+    
+    // // remove button from kitchen
+    // $(this).hide();
+
+    // if (kitchenobjects.length <1) {
+    //     kitchenobjects = null;
+    //     $('#empty-message').show();
+    //     $('#recipelist').hide();
+    //     $('#recipelist2').hide();
+    // }
         
-    // push data to local storage
-    console.log(kitchenobjects);
-    localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
+    // // push data to local storage
+    // console.log(kitchenobjects);
+    // localStorage.setItem('kitchen',JSON.stringify(kitchenobjects));
 
 })

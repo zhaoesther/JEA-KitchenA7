@@ -12,6 +12,22 @@ $(document).ready(function() {
     $('.preloader').hide();
     ready = true;
     console.log('loaded!');
+
+    // Show name of page
+    var showpagename = function() {
+        if ($("#main").offset().top > 200) {
+            $("#pagename").show();
+            $("#pagename").removeClass("fadeOut");
+            $("#pagename").addClass("fadeIn");
+        } else {
+            $("#pagename").removeClass("fadeIn");
+            $("#pagename").addClass("fadeOut");
+        }
+    };
+    // Show now if page is not at top
+    showpagename();
+    // Show when page is scrolled
+    $(window).scroll(showpagename);
     
     // Navbar Active Selection
     var url = window.location;
