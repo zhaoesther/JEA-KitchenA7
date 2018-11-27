@@ -49,7 +49,7 @@
 </center>
     <div class="container">
         <div class="row">
-            <p><b>Ingredients</b></p>
+            <h2><b>Ingredients</b></h2>
         </div>
         <div class="row"> 
             <ul>
@@ -58,8 +58,22 @@
                 {{/each}}
             </ul>
         </div>
+        <div id="ingredients-in-common">
+
+                <div class="row">
+                    <h2 class="withPadding"><b>Ingredients in common with your kitchen:</b></h2>
+                </div>
+                <div class="row">
+                    <ul>
+                        {{#each instockArr as |item| }}
+                            <li>{{item}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+        </div>
         <div class="row">
-            <p><b>Steps</b></p>
+            <h2><b>Steps</b></h2>
         </div>
         <div class="row">
             <ol>

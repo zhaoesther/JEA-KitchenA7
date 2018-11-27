@@ -25,8 +25,9 @@ const recipePageData = [
 	                   '1/2 teaspoon ground pepper',
 	                   '1 tablespoon parsley, roughly chopped'
 	                  ],
-	    'keyIngredients': ['Chicken', 'Kale'],
-	    'instock': [],
+	    'keyIngredients': ['Chicken', 'Kale', 'Onion', 'Carrot', 'Garlic', 'Celery', 'Parsley'],
+	    'instock': new Set(),
+	    'instockArr':[],
 
 		'steps': ['In a large pot over medium-low heat, heat oil.',
 				  'Add in onion and garlic and pan fry for one minute.',
@@ -60,7 +61,9 @@ const recipePageData = [
 	                   '3/4 teaspoon fine-grain sea salt',
 	                   '3/4 teaspoon ground pepper',
 					  ],
-		'keyIngredients': ['Kale'],
+		'keyIngredients': ['Kale', 'Garlic', 'Lemon'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Make the pesto: In a food processor, add the peeled garlic cloves and process until the garlic is minced. Add the kale, hemp seeds, lemon juice, salt and pepper. Turn on the food processor and drizzle in the oil. Process until the pesto reaches your desired consistency, stopping to scrape down the sides as necessary. Taste and add more lemon, salt or pepper if necessary. (You can thin out the pesto with more oil, but if you’re serving with pasta, keep in mind that you can also thin it out with reserved pasta cooking water.)',
 				  'Cook the pasta (optional): Bring a large pot of salted water to boil. Add the pasta and cook until al dente, according to package directions. Reserve one cup cooking liquid before draining the pasta. Let the pasta and pasta water cool for a minute to make sure the high heat doesn’t damage the flax oil pesto.',
 				  'If you intend to have leftovers, transfer the amount of pasta you think you’ll be eating immediately to a serving bowl and mix in pesto with splashes of cooking water. Otherwise, you can mix the pasta and pesto together in your cooking pot, adding splashes of cooking water as necessary. Keep in mind that you have diluted the flavor a bit with the cooking water, so taste and add more lemon, salt or a drizzle of olive oil as necessary.'
@@ -86,7 +89,9 @@ const recipePageData = [
 	                   '1 tbsp soy sauce',
 	                   '1 tbsp oyster sauce'
 					  ],
-		'keyIngredients': ['Kale'],
+		'keyIngredients': ['Kale', 'Garlic', 'Oyster Sauce'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Heat the oil in a large wok or frying pan, then tip in the garlic and cook for a few secs. Throw in the kale and toss around the pan to coat in the garlicky oil.',
 				  'Pour over 100ml boiling water and cook for 7 mins more until the kale has wilted and is cooked through.',
 				  'Stir in the soy and oyster sauces and heat through to serve.'
@@ -119,7 +124,9 @@ const recipePageData = [
 				  'cup sliced almonds',
 				  '1/4 cup crumbled blue cheese or goat cheese'
 				 ],
-		'keyIngredients': ['Kale'],
+		'keyIngredients': ['Kale', 'Garlic', 'Cranberry', 'Honey'],
+		'instock': new Set(),
+		'instockArr':[],
 	   'steps': ['Heat 2 Tbsp. oil in a large saute pan over medium-high heat. Add shallot and saute for at least 5 minutes or until tender. Add garlic and saute for 1 minute. Then add cranberries, red wine vinegar, honey and lemon juice and zest, and stir to combine. Season with salt and pepper.',
 	             'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.'
 	                  ],
@@ -143,6 +150,8 @@ const recipePageData = [
 	                   '200g bag kale'
 					  ],
 		'keyIngredients': ['Kale'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Preheat an oven to 350 degrees F (175 degrees C). Line a non insulated cookie sheet with parchment paper.',
 				  'With a knife or kitchen shears carefully remove the leaves from the thick stems and tear into bite size pieces. Wash and thoroughly dry kale with a salad spinner. Drizzle kale with olive oil and sprinkle with seasoning salt.',
 				  'Bake until the edges brown but are not burnt, 10 to 15 minutes.'
@@ -172,6 +181,8 @@ const recipePageData = [
 	                   'chopped spring onion and coriander for garnish'
 					  ],
 		'keyIngredients': ['Tomato', 'Egg'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Bring a small pot of water to a boil. Prepare another bowl of ice water.',
 				  'Cut a shallow, small "X" at the base of each tomato and blanch in the hot water for 30 seconds. Remove the tomatoes when you see the tomato skin begins to peel away from the fruit. Submerge the tomatoes into ice water until cool enough to handle.',
 				  'Peel off the tomato skin and cut each tomato into 6 or 8 wedges, depending on how big the tomato is. Discard the skin and set the tomato wedges aside.',
@@ -203,6 +214,8 @@ const recipePageData = [
 	                   '4 pinches fresh ground black pepper'
 					  ],
 		'keyIngredients': ['Salmon'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Lay each salmon fillet onto a piece of aluminum foil skin-side down.',
 				  'Add salt and freshly ground black pepper.',
 				  'Wrap each fillet tightly in the foil. Be sure to make an airtight seal. I recommend to fold the foil lengthwise and continue to fold along the seam until the fish is firmly wrapped. Fold/roll in each remaining end until the fish is fully enclosed.',
@@ -240,7 +253,9 @@ const recipePageData = [
 	                   '1/2 cup shredded carrots',
 	                   '8 ounces shredded sharp cheddar cheese (about 2 cups)'
 					  ],
-		'keyIngredients': ['Broccoli, Carrot'],
+		'keyIngredients': ['Broccoli', 'Carrot', 'Milk', 'Flour', 'Garlic', 'Cheese'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Melt butter in a large saucepan over medium heat. Add onions and garlic to pan; sauté until  fragrant and slightly translucent, but not brown, about 3-4 minutes. Stir in the flour to form a paste; cook 1 minute, stirring constantly.',
 				  'Whisk in the chicken broth, milk, heavy cream, white pepper, black pepper, ground nutmeg, and turmeric powder. Simmer on low for 15 minutes or until the mixture has thickened slightly. ',
 				  'Stir in the broccoli florets, carrots, and cheese; cover pan. Simmer for 5-6 minutes, or until the broccoli is tender; add salt to taste. Serve Immediately . '
@@ -270,7 +285,9 @@ const recipePageData = [
 	                   '1 tablespoon olive oil',
 	                   'Shaved Romano cheese and minced fresh parsley'
 					  ],
-		'keyIngredients': ['Broccoli, Egg'],
+		'keyIngredients': ['Broccoli', 'Egg', 'Cheese'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Preheat broiler. In a large saucepan, place steamer basket over 1 in. of water. Place broccoli in basket. Bring water to a boil. Reduce heat to a simmer; steam, covered, 4-6 minutes or until crisp-tender.',
 				  'In a large bowl, whisk eggs, milk, salt and pepper. Stir in cooked broccoli, grated cheese and olives. In a 10-in. ovenproof skillet, heat oil over medium heat; pour in egg mixture. Cook, uncovered, 4-6 minutes or until nearly set.',
 				  'Broil 3-4 in. from heat 2-4 minutes or until eggs are completely set. Let stand 5 minutes. Cut into wedges. Sprinkle with shaved cheese and parsley.'
@@ -300,7 +317,9 @@ const recipePageData = [
 	                   '1 cup heavy cream (or coconut milk)',
 	                   '2 cups spinach, rinsed and chopped'
 					  ],
-		'keyIngredients': ['Chicken, Spinach'],
+		'keyIngredients': ['Chicken', 'Spinach', 'Cream', 'Garlic'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Heat oil in a large skillet over medium-high heat. Add in the chicken and stir fry for 3-5 minutes, then add chopped onion and cook about 3-4 minutes. Season with salt, pepper, and Cajun spices. Add in the garlic and ginger and stir fry for another 5 to 10 minutes, stirring constantly.',
 				  'Gradually whisk in chicken broth, then the cream and mix until the mixture is smooth. Reduce heat and allow the sauce to thicken, about 5 minutes. Finally add in chopped spinach, stir well and cook for 1 to 2 minutes, until spinach is slightly wilted. Adjust seasoning if necessary.',
 				  'Remove from the heat, top with additional salt, pepper, and Cajun seasoning if desired. Enjoy immediately on top of rice or pasta.'
@@ -332,7 +351,9 @@ const recipePageData = [
 	                   '2 tablespoons chopped fresh basil',
 	                   '1 tablespoon chopped fresh parsley'
 					  ],
-		'keyIngredients': ['Salmon, Spinach, Tomato'],
+		'keyIngredients': ['Salmon', 'Spinach', 'Tomato', 'Cheese', 'Butter', 'Ginger'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Heat olive oil in a large skillet over medium-high heat.',
 				  'Season salmon fillets with salt and pepper and transfer to the skillet, skin-side up.',
 				  'Cook for about 7 to 8 minutes, or until browned and cooked about three quarters of the way through.',
@@ -371,7 +392,9 @@ const recipePageData = [
 	                   'Freshly ground black pepper to taste',
 	                   'Smoked paprika and fresh dill weed for garnish'
 					  ],
-		'keyIngredients': ['Egg'],
+		'keyIngredients': ['Egg', 'Mayonnaise', 'Butter', 'Mustard', 'Paprika'],
+		'instock': new Set(),
+		'instockArr':[],
 		'steps': ['Hard boil eggs in an instant pot, or using your favorite method.',
 				  'Peel eggs gently so the whites remain intact.',
 				  'Slice the eggs in half lengthwise',
@@ -415,10 +438,26 @@ $(document).ready(function() {
   console.log('query for', recipeTitle);
 
   // Load the recipe page according to the recipe queried for
-
   for (var i = 0; i < recipePageData.length; i++) {
     var curData = recipePageData[i];
     if (curData.title == recipeTitle) {
+    	// Get the items that the user has in their kitchen
+    	var localitemref = JSON.parse(localStorage.getItem("kitchen"));
+    	var keyIng = curData.keyIngredients;
+    	if( localitemref != null ) {
+    		// Compare what the user has versus the key inredients needed for the recipe
+    		for( var k = 0; k < localitemref.length; k++) {
+    			for(var j = 0; j < keyIng.length; j++ ) {
+    				if( localitemref[k].inv === keyIng[j] ) {
+    					// Populate the instock list for this current recipe
+    					(curData.instock).add(keyIng[j]);
+    				}
+    			}
+    		}
+    		for( let item of curData.instock ) {
+    			(curData.instockArr).push(item);
+    		}
+    	}
 		var curHtml = template(curData);
 		parentDiv.append(curHtml);
     }

@@ -415,4 +415,14 @@ a.nav-item {
 	margin: 50px;
 }
 
+#ingredients-in-common {
+	border-radius: 25px;
+	background: #FFC010;
+}
+
+.withPadding {
+	text-align: center;
+	padding:20px;
+	margin:20px;
+}
 
